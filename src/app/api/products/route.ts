@@ -19,7 +19,7 @@ export async function GET() {
     return NextResponse.json( productsWithPrice, {
       status: 200
     });
-  } catch (error) {
+  } catch (error :any) {
     return NextResponse.json({ message:error.message }, {
       status: 500
     });

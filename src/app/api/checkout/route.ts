@@ -25,7 +25,7 @@ export async function POST(req : Request, res:any) {
      })
     
     return NextResponse.json({ url:session.url})
-  } catch (error) {
+  } catch (error : any) {
     return NextResponse.json({ message:error.message }, {
       status: error.statusCode || 500
     });
