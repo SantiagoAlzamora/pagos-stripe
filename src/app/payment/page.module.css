@@ -1,0 +1,26 @@
+.main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.paymentContainer {
+  padding: 2rem 10rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  font-weight: 600;
+}
+
+.paymentImg {
+  width: 100px;
+  height: 100px;
+}
+
+.paymentText{
+  color: white;
+}
