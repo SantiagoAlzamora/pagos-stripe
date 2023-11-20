@@ -8,7 +8,7 @@ export default function CheckoutForm() {
 
   async function handleSubmit(event: FormEvent) {
     event.preventDefault()
-    const {data} = await axios.post(`http://localhost:3000/api/checkout`, {
+    const {data} = await axios.post(`https://pagos-stripe.vercel.app/api/checkout`, {
       price_id: selectedProduct?.default_price
     }, {
       headers: {
