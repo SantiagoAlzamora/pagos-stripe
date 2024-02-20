@@ -4,12 +4,16 @@ import styles from './page.module.css'
 import ProductList from '@/components/ProductList/ProductList'
 import { useProductStore } from '@/store/productStore'
 import Loader from '@/components/Loader/Loader'
+import { useEffect } from 'react'
 
 export default function Home() {
   const fetchProducts = useProductStore(state => state.fetchProducts)
   const products = useProductStore((state) => state.products)
   const selectedProduct = useProductStore(state => state.selectedProduct)
-  fetchProducts()
+  useEffect(()=>{
+    fetchProducts()
+  },[])
+  
 
   return (
     <main className={styles.main}>

@@ -3,9 +3,11 @@ import Stripe from 'stripe';
 
 const stripe = new Stripe(process.env.SECRET_KEY as string)
 
-export async function GET() {
+export async function GET(request: Request) {
   try {
-    const products = await stripe.products.list({ active: true })
+    const products = await stripe.products.list({ active: true }, )
+    
+    
     const productsWithPrice = await Promise.all(
       products.data.map(async product => {
        
