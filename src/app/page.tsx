@@ -10,7 +10,7 @@ import { IProduct } from "@/types/types"
 
 export default function Home() {
   //const fetchProducts = useProductStore(state => state.fetchProducts)
-  const [products, setProducts] = useState([])
+  const [products, setProducts] = useState<IProduct[]>([])
   //const products = useProductStore((state) => state.products)
   const selectedProduct = useProductStore(state => state.selectedProduct)
   useEffect(()=>{
