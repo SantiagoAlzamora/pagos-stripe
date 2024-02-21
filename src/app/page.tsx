@@ -17,7 +17,7 @@ export default function Home() {
     const fetchProducts= async()=>{        
         const productosResponse = await axios.get(`https://api.stripe.com/v1/products`, {
         headers: {
-          'Authorization': `Bearer ${process.env.SECRET_KEY}`,
+          'Authorization': `Bearer sk_test_51OC0qkGwtvH3PnHDyWTPHM12CfIkzI8j7Q5FFWjl1oZu6ACnNI89oCl3D1Lknacb3Q6qlCZvUlwvg53q95JyQnKT00HwAcUVkf`,
           'Content-Type': 'application/json'
         }
       });
@@ -29,7 +29,7 @@ export default function Home() {
       const preciosPromises = productos.map((producto) => {
         return axios.get(`https://api.stripe.com/v1/prices?product=${producto.id}`, {
           headers: {
-            'Authorization': `Bearer ${process.env.SECRET_KEY}`,
+            'Authorization': `Bearer sk_test_51OC0qkGwtvH3PnHDyWTPHM12CfIkzI8j7Q5FFWjl1oZu6ACnNI89oCl3D1Lknacb3Q6qlCZvUlwvg53q95JyQnKT00HwAcUVkf`,
             'Content-Type': 'application/json'
           }
         });
