@@ -11,6 +11,7 @@ export default function ProductItem({ product }: Props) {
   const selectedProduct = useProductStore(state => state.selectedProduct)
   const onSelectProduct = useProductStore(state =>state.onSelectProduct)
   const { images, name, price, id } = product
+  
   const isSelected = selectedProduct?.id === id
   return (
     <article onClick={()=>onSelectProduct(product)} className={isSelected ? styles.productContainerSelected : styles.productContainer}>

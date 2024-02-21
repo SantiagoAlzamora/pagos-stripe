@@ -15,8 +15,9 @@ export const useProductStore = create<State>((set)=>{
     selectedProduct:null,
     fetchProducts: async()=>{        
       const {data} =  await axios.get("http://localhost:3000/api/products")
+      
       set({
-        products : data
+        products:data
       })
     },
     onSelectProduct:(product)=>{
@@ -26,3 +27,4 @@ export const useProductStore = create<State>((set)=>{
     }
   }
 })
+
