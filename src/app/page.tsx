@@ -4,7 +4,7 @@ import styles from './page.module.css'
 import ProductList from '@/components/ProductList/ProductList'
 import { useProductStore } from '@/store/productStore'
 import Loader from '@/components/Loader/Loader'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 export default function Home() {
   //const fetchProducts = useProductStore(state => state.fetchProducts)
