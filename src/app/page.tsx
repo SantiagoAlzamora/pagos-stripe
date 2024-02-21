@@ -5,6 +5,7 @@ import ProductList from '@/components/ProductList/ProductList'
 import { useProductStore } from '@/store/productStore'
 import Loader from '@/components/Loader/Loader'
 import { useEffect, useState } from 'react'
+import axios from 'axios'
 
 export default function Home() {
   //const fetchProducts = useProductStore(state => state.fetchProducts)
@@ -13,9 +14,13 @@ export default function Home() {
   const selectedProduct = useProductStore(state => state.selectedProduct)
   useEffect(()=>{
     const fetchProducts= async()=>{        
-      const {data} =  await axios.get("https://pagos-stripe.vercel.app/api/products")
-      setProducts(data)
-      console.log(data)
+      const {data} =  axios.get(`https://api.stripe.com/v1/products`, {
+      headers: {
+        'Authorization': `Bearer ${process.env.SECRET_KEY}`,
+        'Content-Type': 'application/json'
+      }
+      
+      console.log(data.data)
     }
     fetchProducts()
     
