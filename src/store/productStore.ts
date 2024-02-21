@@ -14,8 +14,7 @@ export const useProductStore = create<State>((set)=>{
     products:[],
     selectedProduct:null,
     fetchProducts: async()=>{        
-      const {data} =  await axios.get("http://localhost:3000/api/products")
-      
+      const {data} =  await axios.get("https://pagos-stripe.vercel.app/api/products")
       set({
         products:data
       })
