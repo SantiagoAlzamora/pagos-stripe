@@ -20,7 +20,7 @@ export default function Home() {
         'Content-Type': 'application/json'
       }
       
-      console.log(data.data)
+      console.info(data.data)
     }
     fetchProducts()
     
