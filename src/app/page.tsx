@@ -7,11 +7,18 @@ import Loader from '@/components/Loader/Loader'
 import { useEffect } from 'react'
 
 export default function Home() {
-  const fetchProducts = useProductStore(state => state.fetchProducts)
-  const products = useProductStore((state) => state.products)
+  //const fetchProducts = useProductStore(state => state.fetchProducts)
+  const [products, setProducts] = useState([])
+  //const products = useProductStore((state) => state.products)
   const selectedProduct = useProductStore(state => state.selectedProduct)
   useEffect(()=>{
+    const fetchProducts= async()=>{        
+      const {data} =  await axios.get("https://pagos-stripe.vercel.app/api/products")
+      setProducts(data)
+      console.log(data)
+    }
     fetchProducts()
+    
   },[])
   
 
