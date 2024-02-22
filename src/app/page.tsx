@@ -17,7 +17,7 @@ export default function Home() {
     const fetchProducts= async()=>{        
         const productosResponse = await axios.get(`https://api.stripe.com/v1/products`, {
         headers: {
-          'Authorization': `Bearer ${process.env.SECRET_KEY}`,
+          'Authorization': `Bearer ${process.env.NEXT_PUBLIC_SECRET_KEY}`,
           'Content-Type': 'application/json'
         }
       });
@@ -29,7 +29,7 @@ export default function Home() {
       const preciosPromises = productos.map((producto) => {
         return axios.get(`https://api.stripe.com/v1/prices?product=${producto.id}`, {
           headers: {
-            'Authorization': `Bearer ${process.env.SECRET_KEY}`,
+            'Authorization': `Bearer ${process.env.NEXT_PUBLIC_SECRET_KEY}`,
             'Content-Type': 'application/json'
           }
         });
